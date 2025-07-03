@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Каркасные дома под ключ</title>
   <style>
+    :root {
+      --bg: #f7f6f2;
+      --accent: #d4a373;
+      --text: #333;
+      --light: #fff;
+    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -12,114 +18,117 @@
     }
     body {
       font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
     }
     header {
-      position: relative;
-      background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
       height: 100vh;
+      color: var(--light);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
       text-align: center;
+      padding: 0 20px;
+      position: relative;
     }
     header::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.55);
-      z-index: 0;
+      background: rgba(0,0,0,0.4);
     }
-    header h1, header p, .buttons {
+    header h1, header p, header .btn {
       z-index: 1;
+      position: relative;
     }
     header h1 {
       font-size: 3em;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.3em;
     }
     header p {
       font-size: 1.2em;
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
     }
-    .buttons a {
-      display: inline-block;
-      margin: 0 10px;
+    .btn {
       padding: 12px 24px;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
+      background: var(--accent);
+      color: var(--light);
+      border: none;
       border-radius: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: background 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .buttons a:hover {
-      background: #0056b3;
-    }
+
     section {
       padding: 60px 20px;
       max-width: 1200px;
       margin: auto;
     }
     h2 {
-      font-size: 2em;
-      margin-bottom: 30px;
       text-align: center;
+      margin-bottom: 40px;
+      font-size: 2em;
     }
-    .features-section {
-      background: url('https://images.unsplash.com/photo-1600585154515-3e4b800fd66f') center/cover no-repeat;
-      color: white;
-    }
+
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
-    }
-    .features .card {
-      background: rgba(0,0,0,0.6);
-      padding: 15px;
-      border-radius: 8px;
-      font-size: 0.95em;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-    .steps, .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-align: center;
     }
-    .gallery a {
-      display: block;
+    .features div {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+
+    .steps, .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
     .gallery img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
     .gallery img:hover {
       transform: scale(1.03);
     }
+
+    .card {
+      background: var(--light);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
     .about, .reviews {
-      background: white;
+      background: var(--light);
       border-radius: 10px;
       padding: 30px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
     }
+
     footer {
       background: #222;
       color: white;
       text-align: center;
       padding: 30px 20px;
+    }
+
+    @media(max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
@@ -127,56 +136,60 @@
 
 <header>
   <h1>Каркасные дома под ключ</h1>
-  <p>Строим быстро, качественно и с гарантией</p>
-  <div class="buttons">
-    <a href="https://t.me/your_telegram">Telegram</a>
-    <a href="https://wa.me/your_whatsapp">WhatsApp</a>
-    <a href="tel:+79999999999">Позвонить</a>
-  </div>
+  <p>Строим уют, надёжно и с гарантией</p>
+  <a href="https://t.me/your_telegram" class="btn">Связаться</a>
 </header>
 
-<section class="features-section">
-  <h2>Наши преимущества</h2>
+<section>
+  <h2>Почему выбирают нас</h2>
   <div class="features">
-    <div class="card">🔨 Быстрая сборка</div>
-    <div class="card">💰 Прозрачная цена</div>
-    <div class="card">📦 Под ключ</div>
-    <div class="card">🛠 Качественные материалы</div>
+    <div>🔧 Быстрая сборка</div>
+    <div>💰 Прозрачные цены</div>
+    <div>📦 Под ключ</div>
+    <div>🛠 Качественные материалы</div>
+    <div>📐 Индивидуальные проекты</div>
+    <div>📍 Работа по всей России</div>
   </div>
 </section>
 
 <section>
-  <h2>Как мы работаем</h2>
+  <h2>Этапы строительства</h2>
   <div class="steps">
-    <div class="card">1. Звонок / заявка</div>
-    <div class="card">2. Замер и расчет</div>
-    <div class="card">3. Подписание договора</div>
-    <div class="card">4. Строительство</div>
-    <div class="card">5. Сдача объекта</div>
+    <div class="card">1. Звонок или заявка</div>
+    <div class="card">2. Выезд и замер</div>
+    <div class="card">3. Договор и аванс</div>
+    <div class="card">4. Строительство 2–4 недели</div>
+    <div class="card">5. Приёмка дома и гарантия</div>
   </div>
 </section>
 
 <section>
-  <h2>Галерея наших домов</h2>
+  <h2>Наши работы</h2>
   <div class="gallery">
-    <a href="https://images.unsplash.com/photo-1600585154515-3e4b800fd66f" target="_blank">
-      <img src="https://images.unsplash.com/photo-1600585154515-3e4b800fd66f" alt="Дом 1">
-    </a>
-    <a href="https://images.unsplash.com/photo-1599422314077-f4dfdaa4cd69" target="_blank">
-      <img src="https://images.unsplash.com/photo-1599422314077-f4dfdaa4cd69" alt="Дом 2">
-    </a>
+    <img src="https://images.unsplash.com/photo-1600585154515-3e4b800fd66f?auto=format&fit=crop&w=600&q=80" alt="Дом 1">
+    <img src="https://images.unsplash.com/photo-1599422314077-f4dfdaa4cd69?auto=format&fit=crop&w=600&q=80" alt="Дом 2">
+    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80" alt="Дом 3">
   </div>
 </section>
 
 <section class="about">
   <h2>О компании</h2>
-  <p>Мы — команда профессионалов с более чем 10-летним опытом в строительстве каркасных домов. Работаем по всей России. Даём гарантию, соблюдаем сроки и экономим ваши нервы.</p>
+  <p>Наша команда — это профессионалы, которые строят каркасные дома по всей России. У нас собственные бригады, гарантия на материалы и соблюдение сроков. Работаем с 2010 года. Делаем дом — как для себя.</p>
 </section>
 
 <section class="reviews">
-  <h2>Отзывы клиентов</h2>
-  <p>“Очень доволен домом! Построили быстро, учли все пожелания, буду рекомендовать друзьям.” — Алексей П.</p>
-  <p>“Спасибо за качественную работу. Все честно, понятно, и главное — уютно.” — Марина К.</p>
+  <h2>Отзывы</h2>
+  <p>“Дом построили быстро, тепло, уютно. Работают чисто, цены честные.” — Иван С.</p>
+  <p>“Рекомендую. Все по договору, приехали, сделали, сдали без нервов.” — Алена В.</p>
+</section>
+
+<section>
+  <h2>Контакты</h2>
+  <div class="features">
+    <div>📞 <a href="tel:+79999999999">+7 (999) 999-99-99</a></div>
+    <div>💬 <a href="https://t.me/your_telegram">Telegram</a></div>
+    <div>📱 <a href="https://wa.me/79999999999">WhatsApp</a></div>
+  </div>
 </section>
 
 <footer>
