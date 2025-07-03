@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каркасные дома под ключ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fdfdfb;
-      --primary: #edeae1;
-      --accent: #d7a86e;
+      --bg: #f7f4ee;
+      --accent: #c7a27e;
       --text: #2b2b2b;
       --light: #ffffff;
-      --shadow: 0 8px 24px rgba(0,0,0,0.1);
+      --shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,154 +23,170 @@
     }
 
     header {
-      background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.3)),
+      background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1)),
         url('https://images.unsplash.com/photo-1600585153943-5700c5a7706f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 100vh;
+      height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       text-align: center;
-      padding: 20px;
+      color: white;
     }
     header h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      font-weight: 700;
     }
     header p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
+      margin-top: 1rem;
+      font-size: 1.2rem;
     }
-    .btn {
-      background: var(--accent);
-      padding: 14px 28px;
-      color: white;
-      border-radius: 30px;
-      font-weight: 600;
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
       text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background: #bd905d;
+      color: var(--text);
+      font-weight: 600;
     }
 
     section {
-      padding: 80px 20px;
+      padding: 60px 20px;
       max-width: 1200px;
       margin: auto;
     }
     h2 {
-      font-size: 2.2rem;
       text-align: center;
-      margin-bottom: 60px;
+      font-size: 2rem;
+      margin-bottom: 40px;
     }
-
-    .features, .steps, .gallery, .contacts {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
     }
-
     .card {
       background: var(--light);
-      padding: 30px;
-      border-radius: 20px;
+      border-radius: 16px;
+      padding: 24px;
       box-shadow: var(--shadow);
       text-align: center;
     }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 16px;
-      transition: transform 0.3s ease;
-      box-shadow: var(--shadow);
+    .card img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
     }
-    .gallery img:hover {
-      transform: scale(1.03);
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      margin-top: 1rem;
+      text-decoration: none;
+    }
+
+    .catalog a {
+      text-decoration: underline;
+      color: var(--accent);
     }
 
     footer {
-      background: var(--primary);
+      background: var(--light);
       text-align: center;
-      padding: 40px 20px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
+      padding: 40px;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
-<header data-aos="fade">
+<header>
   <div>
     <h1>Каркасные дома под ключ</h1>
-    <p>Современные решения. Эстетика. Качество.</p>
-    <a href="#contacts" class="btn">Связаться с нами</a>
+    <p>Современные, тёплые и доступные дома по всей России</p>
   </div>
 </header>
 
-<section data-aos="fade-up">
-  <h2>Почему выбирают нас</h2>
-  <div class="features">
-    <div class="card">🔧 Быстрая сборка</div>
-    <div class="card">💰 Прозрачная цена</div>
-    <div class="card">📦 Под ключ</div>
-    <div class="card">🛠 Качественные материалы</div>
+<nav>
+  <a href="#projects">Проекты</a>
+  <a href="#steps">Этапы</a>
+  <a href="#blog">Блог</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+
+<section id="projects">
+  <h2>Наши проекты</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80">
+      <h3>Дом 120 м²</h3>
+      <p>3 спальни, терраса, панорамные окна</p>
+      <a href="#" class="btn">Подробнее</a>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80">
+      <h3>Дом 90 м²</h3>
+      <p>2 спальни, мансарда, быстрый монтаж</p>
+      <a href="#" class="btn">Подробнее</a>
+    </div>
   </div>
 </section>
 
-<section data-aos="fade-up">
+<section id="steps">
   <h2>Этапы строительства</h2>
-  <div class="steps">
-    <div class="card">1. Заявка и консультация</div>
-    <div class="card">2. Выезд и замер</div>
-    <div class="card">3. Согласование проекта</div>
-    <div class="card">4. Строительство и сдача</div>
+  <div class="cards">
+    <div class="card">📞 Звонок и консультация</div>
+    <div class="card">📐 Проект и смета</div>
+    <div class="card">🔨 Строительство</div>
+    <div class="card">📸 Сдача и фотоотчёт</div>
   </div>
 </section>
 
-<section data-aos="fade-up">
-  <h2>Галерея домов</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1599422314077-f4dfdaa4cd69?auto=format&fit=crop&w=600&q=80">
-    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80">
-    <img src="https://images.unsplash.com/photo-1600585154515-3e4b800fd66f?auto=format&fit=crop&w=600&q=80">
+<section class="catalog">
+  <h2>Каталог проектов</h2>
+  <p style="text-align:center;">Скачайте полный каталог в PDF:
+    <br><br><a href="#">📥 Скачать каталог</a>
+  </p>
+</section>
+
+<section id="blog">
+  <h2>Полезные статьи</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Как выбрать участок под строительство</h3>
+      <p>5 простых советов для будущих домовладельцев</p>
+      <a href="#" class="btn">Читать</a>
+    </div>
+    <div class="card">
+      <h3>Сравнение SIP и каркаса</h3>
+      <p>Что выбрать: тёплый контур или классика?</p>
+      <a href="#" class="btn">Читать</a>
+    </div>
   </div>
 </section>
 
-<section data-aos="fade-up">
-  <h2>О компании</h2>
-  <div class="card">
-    <p>Мы специализируемся на строительстве каркасных домов премиум-класса. У нас — прозрачные условия, официальные договора, фотоотчёты, индивидуальный подход. Более 150 реализованных проектов по всей стране.</p>
-  </div>
-</section>
-
-<section data-aos="fade-up">
-  <h2>Отзывы клиентов</h2>
-  <div class="card">
-    <p>“Строительство шло быстро и без проблем. Команда — супер! Спасибо за наш уютный дом.” — Анна и Дмитрий</p>
-    <p>“Не ожидал такого качества за эту цену. Рекомендую всем знакомым.” — Сергей Т.</p>
-  </div>
-</section>
-
-<section id="contacts" data-aos="fade-up">
-  <h2>Связь с нами</h2>
-  <div class="contacts">
-    <div class="card">📞 <a href="tel:+79999999999">+7 (999) 999-99-99</a></div>
+<section id="contacts">
+  <h2>Контакты</h2>
+  <div class="cards">
+    <div class="card">📞 +7 (999) 000‑00‑00</div>
     <div class="card">💬 <a href="https://t.me/your_telegram">Telegram</a></div>
-    <div class="card">📱 <a href="https://wa.me/79999999999">WhatsApp</a></div>
+    <div class="card">📱 <a href="https://wa.me/79990000000">WhatsApp</a></div>
   </div>
 </section>
 
 <footer>
-  &copy; 2025 Каркасные дома. Строим с любовью.
+  © 2025 Каркасные дома | Все права защищены
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
 </body>
 </html>
