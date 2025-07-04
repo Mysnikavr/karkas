@@ -23,14 +23,26 @@
     }
 
     header {
-      background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1)),
-        url('https://images.unsplash.com/photo-1600585153943-5700c5a7706f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1600585153943-5700c5a7706f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
     }
     header h1 {
       font-size: 3rem;
@@ -50,6 +62,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
+      z-index: 1000;
     }
     nav a {
       text-decoration: none;
@@ -73,30 +86,40 @@
       gap: 30px;
     }
     .card {
-      background: var(--light);
+      background-size: cover;
+      background-position: center;
+      height: 300px;
       border-radius: 16px;
       padding: 24px;
       box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      position: relative;
       text-align: center;
     }
-    .card img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-bottom: 1rem;
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 16px;
+    }
+    .card h3, .card p, .card a {
+      position: relative;
+      z-index: 2;
     }
     .btn {
       display: inline-block;
       background: var(--accent);
       color: white;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 8px;
       margin-top: 1rem;
       text-decoration: none;
-    }
-
-    .catalog a {
-      text-decoration: underline;
-      color: var(--accent);
     }
 
     footer {
@@ -127,14 +150,12 @@
 <section id="projects">
   <h2>Наши проекты</h2>
   <div class="cards">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80">
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80');">
       <h3>Дом 120 м²</h3>
       <p>3 спальни, терраса, панорамные окна</p>
       <a href="#" class="btn">Подробнее</a>
     </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80">
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80');">
       <h3>Дом 90 м²</h3>
       <p>2 спальни, мансарда, быстрый монтаж</p>
       <a href="#" class="btn">Подробнее</a>
@@ -145,31 +166,24 @@
 <section id="steps">
   <h2>Этапы строительства</h2>
   <div class="cards">
-    <div class="card">📞 Звонок и консультация</div>
-    <div class="card">📐 Проект и смета</div>
-    <div class="card">🔨 Строительство</div>
-    <div class="card">📸 Сдача и фотоотчёт</div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80');">📞 Звонок и консультация</div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80');">📐 Проект и смета</div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1552642986-ccb41e7059e0?auto=format&fit=crop&w=800&q=80');">🔨 Строительство</div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1574180045827-681f8a1a9622?auto=format&fit=crop&w=800&q=80');">📸 Сдача и фотоотчёт</div>
   </div>
-</section>
-
-<section class="catalog">
-  <h2>Каталог проектов</h2>
-  <p style="text-align:center;">Скачайте полный каталог в PDF:
-    <br><br><a href="#">📥 Скачать каталог</a>
-  </p>
 </section>
 
 <section id="blog">
   <h2>Полезные статьи</h2>
   <div class="cards">
-    <div class="card">
-      <h3>Как выбрать участок под строительство</h3>
-      <p>5 простых советов для будущих домовладельцев</p>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1600585154206-4396af6d8e6e?auto=format&fit=crop&w=800&q=80');">
+      <h3>Как выбрать участок</h3>
+      <p>5 советов для будущих владельцев</p>
       <a href="#" class="btn">Читать</a>
     </div>
-    <div class="card">
-      <h3>Сравнение SIP и каркаса</h3>
-      <p>Что выбрать: тёплый контур или классика?</p>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=80');">
+      <h3>SIP или каркас?</h3>
+      <p>Что лучше выбрать в 2025?</p>
       <a href="#" class="btn">Читать</a>
     </div>
   </div>
@@ -178,9 +192,9 @@
 <section id="contacts">
   <h2>Контакты</h2>
   <div class="cards">
-    <div class="card">📞 +7 (999) 000‑00‑00</div>
-    <div class="card">💬 <a href="https://t.me/your_telegram">Telegram</a></div>
-    <div class="card">📱 <a href="https://wa.me/79990000000">WhatsApp</a></div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80');">📞 +7 (999) 000‑00‑00</div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=800&q=80');">💬 Telegram</div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=800&q=80');">📱 WhatsApp</div>
   </div>
 </section>
 
