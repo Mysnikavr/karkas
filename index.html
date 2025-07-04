@@ -7,11 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f4ee;
-      --accent: #c7a27e;
-      --text: #2b2b2b;
-      --light: #ffffff;
-      --shadow: 0 4px 16px rgba(0,0,0,0.1);
+      --bg: #f8f8f8;
+      --accent: #bfa88f;
+      --text: #333;
+      --shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,45 +22,44 @@
     }
 
     header {
-      background: url('https://images.unsplash.com/photo-1600585153943-5700c5a7706f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       height: 100vh;
+      background: url('https://images.unsplash.com/photo-1600585153943-5700c5a7706f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: white;
-      position: relative;
     }
     header::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0,0,0,0.45);
       z-index: 1;
     }
-    header h1, header p {
-      position: relative;
+    header .text {
       z-index: 2;
+      color: white;
     }
     header h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 700;
+      margin-bottom: 1rem;
     }
     header p {
-      margin-top: 1rem;
       font-size: 1.2rem;
     }
 
     nav {
-      position: sticky;
-      top: 0;
-      background: #fff;
+      background: white;
       padding: 1rem;
       box-shadow: var(--shadow);
       display: flex;
       justify-content: center;
       gap: 2rem;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
     nav a {
@@ -70,16 +68,42 @@
       font-weight: 600;
     }
 
-    section {
-      padding: 60px 20px;
+    section.hero {
+      height: 60vh;
+      background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    section.hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    section.hero .text {
+      z-index: 2;
+      color: white;
+    }
+    section.hero h2 {
+      font-size: 2.5rem;
+    }
+
+    .section {
+      padding: 80px 20px;
       max-width: 1200px;
       margin: auto;
     }
-    h2 {
+    .section h2 {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 40px;
     }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -88,16 +112,15 @@
     .card {
       background-size: cover;
       background-position: center;
-      height: 300px;
+      height: 240px;
+      position: relative;
+      color: white;
+      padding: 20px;
       border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-weight: bold;
-      position: relative;
       text-align: center;
     }
     .card::before {
@@ -105,102 +128,84 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 16px;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
     }
-    .card h3, .card p, .card a {
-      position: relative;
+    .card h3 {
       z-index: 2;
-    }
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      margin-top: 1rem;
-      text-decoration: none;
+      font-size: 1.4rem;
     }
 
     footer {
-      background: var(--light);
       text-align: center;
       padding: 40px;
       font-size: 0.9rem;
-      color: #888;
+      color: #777;
+      background: #fff;
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div>
-    <h1>Каркасные дома под ключ</h1>
-    <p>Современные, тёплые и доступные дома по всей России</p>
-  </div>
-</header>
-
-<nav>
-  <a href="#projects">Проекты</a>
-  <a href="#steps">Этапы</a>
-  <a href="#blog">Блог</a>
-  <a href="#contacts">Контакты</a>
-</nav>
-
-<section id="projects">
-  <h2>Наши проекты</h2>
-  <div class="cards">
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80');">
-      <h3>Дом 120 м²</h3>
-      <p>3 спальни, терраса, панорамные окна</p>
-      <a href="#" class="btn">Подробнее</a>
+  <header>
+    <div class="text">
+      <h1>Каркасные дома</h1>
+      <p>Надёжные дома под ключ с гарантией качества</p>
     </div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80');">
-      <h3>Дом 90 м²</h3>
-      <p>2 спальни, мансарда, быстрый монтаж</p>
-      <a href="#" class="btn">Подробнее</a>
+  </header>
+
+  <nav>
+    <a href="#projects">Проекты</a>
+    <a href="#steps">Этапы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+
+  <section class="hero">
+    <div class="text">
+      <h2>Строим как для себя</h2>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="steps">
-  <h2>Этапы строительства</h2>
-  <div class="cards">
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80');">📞 Звонок и консультация</div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80');">📐 Проект и смета</div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1552642986-ccb41e7059e0?auto=format&fit=crop&w=800&q=80');">🔨 Строительство</div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1574180045827-681f8a1a9622?auto=format&fit=crop&w=800&q=80');">📸 Сдача и фотоотчёт</div>
-  </div>
-</section>
-
-<section id="blog">
-  <h2>Полезные статьи</h2>
-  <div class="cards">
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1600585154206-4396af6d8e6e?auto=format&fit=crop&w=800&q=80');">
-      <h3>Как выбрать участок</h3>
-      <p>5 советов для будущих владельцев</p>
-      <a href="#" class="btn">Читать</a>
+  <section id="projects" class="section">
+    <h2>Примеры проектов</h2>
+    <div class="cards">
+      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');">
+        <h3>120 м² • Панорамные окна</h3>
+      </div>
+      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914');">
+        <h3>90 м² • Тёплый контур</h3>
+      </div>
     </div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=80');">
-      <h3>SIP или каркас?</h3>
-      <p>Что лучше выбрать в 2025?</p>
-      <a href="#" class="btn">Читать</a>
+  </section>
+
+  <section id="steps" class="section">
+    <h2>Этапы строительства</h2>
+    <div class="cards">
+      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be');">
+        <h3>1. Консультация</h3>
+      </div>
+      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
+        <h3>2. Проект и смета</h3>
+      </div>
+      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1552642986-ccb41e7059e0');">
+        <h3>3. Строительство</h3>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contacts">
-  <h2>Контакты</h2>
-  <div class="cards">
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80');">📞 +7 (999) 000‑00‑00</div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=800&q=80');">💬 Telegram</div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=800&q=80');">📱 WhatsApp</div>
-  </div>
-</section>
+  <section id="contacts" class="section">
+    <h2>Связь с нами</h2>
+    <div class="cards">
+      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2');">
+        <h3>+7 (999) 000‑00‑00</h3>
+      </div>
+      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1588702547923-7093a6c3ba33');">
+        <h3>Telegram / WhatsApp</h3>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2025 Каркасные дома | Все права защищены
-</footer>
-
+  <footer>
+    © 2025 Каркасные дома | Все права защищены
+  </footer>
 </body>
 </html>
