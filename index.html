@@ -1,148 +1,90 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Капля отдыха</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Капля Отдыха</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      background: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: sans-serif; color: #fff; }
     header {
-      background: url('https://source.unsplash.com/1600x900/?camping,forest') no-repeat center center/cover;
-      height: 100vh;
+      position: absolute;
+      top: 0;
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.3);
     }
     header h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
+      font-size: 24px;
     }
-    header p {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-    }
-    header a {
-      padding: 12px 24px;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .services, .reviews {
+    .hero {
+      background: url('hero-image.jpg') center/cover no-repeat;
+      height: 100vh;
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
     }
-    .card {
-      background: white;
+    .hero h2 {
+      font-size: 48px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px 40px;
+      border-radius: 10px;
+    }
+    .section {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      padding: 100px 40px;
+    }
+    .section .text-left {
+      max-width: 500px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .telegram {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      background: rgba(0, 0, 0, 0.5);
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 45%;
+      max-width: 300px;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, textarea, button {
-      padding: 10px;
-      font-size: 1rem;
-    }
-    button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    @media (max-width: 768px) {
-      .card { width: 100%; }
-      header h1 { font-size: 2.5rem; }
+    .telegram img {
+      width: 30px;
+      height: 30px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Капля отдыха</h1>
-    <p>Отдохни на природе — почувствуй свободу и уют</p>
-    <a href="#contact">Забронировать</a>
+    <h1>Капля Отдыха</h1>
+    <img src="logo.png" alt="Логотип" height="40" />
   </header>
 
-  <section>
-    <h2>О нас</h2>
-    <p>Небольшой уютный кемпинг, окружённый природой. Всё, что нужно для отдыха душой и телом. Идеальное место для семьи, пары или компании друзей.</p>
+  <section class="hero">
+    <h2>Капля Отдыха</h2>
   </section>
 
-  <section class="services">
-    <div class="card">
-      <h3>Палатки и домики</h3>
-      <p>Комфортные условия для ночёвки.</p>
-    </div>
-    <div class="card">
-      <h3>Мангалы и кострища</h3>
-      <p>Жарьте шашлык и отдыхайте у костра.</p>
-    </div>
-    <div class="card">
-      <h3>Водоём рядом</h3>
-      <p>Купание, рыбалка, прогулки у воды.</p>
-    </div>
-    <div class="card">
-      <h3>Душ и туалет</h3>
-      <p>Все удобства на месте.</p>
+  <section class="section" style="background-image: url('camp1.jpg');">
+    <div class="text-left">
+      <h3>Уютные кемперы в окружении природы</h3>
+      <p>Ощути свободу, отдыхай в капле уюта. Тихо, спокойно, экологично.</p>
     </div>
   </section>
 
-  <section class="reviews">
-    <h2>Отзывы</h2>
-    <div class="card">
-      <p>“Прекрасное место для отдыха! Всё чисто, спокойно и красиво.”</p>
-      <p><strong>— Анна</strong></p>
-    </div>
-    <div class="card">
-      <p>“Отдыхали семьёй — дети в восторге, взрослые тоже.”</p>
-      <p><strong>— Игорь</strong></p>
+  <section class="section" style="background-image: url('camp2.jpg');">
+    <div class="telegram">
+      <img src="telegram-icon.png" alt="Telegram" />
+      <span><a href="https://t.me/yourchannel" target="_blank" style="color: white; text-decoration: none;">Связаться в Telegram</a></span>
     </div>
   </section>
-
-  <section id="contact">
-    <h2>Бронирование</h2>
-    <form>
-      <input type="text" placeholder="Имя" required>
-      <input type="tel" placeholder="Телефон" required>
-      <input type="date" required>
-      <textarea placeholder="Комментарий (необязательно)"></textarea>
-      <button type="submit">Оставить заявку</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>Контакты: +7 999 123-45-67 | avramenkov_mafik@mail.ru</p>
-    <p>&copy; 2025 Капля отдыха</p>
-  </footer>
 </body>
 </html>
