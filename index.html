@@ -1,135 +1,148 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Каркасные дома под ключ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Капля отдыха</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Rubik', sans-serif;
-      color: #fff;
-      background: #f5f5f5;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+      background: url('https://source.unsplash.com/1600x900/?camping,forest') no-repeat center center/cover;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 2rem;
       color: white;
-      position: relative;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
+      text-shadow: 2px 2px 4px #000;
     }
     header h1 {
-      z-index: 1;
-      font-size: 3rem;
+      font-size: 4rem;
+      margin-bottom: 20px;
     }
     header p {
-      z-index: 1;
       font-size: 1.5rem;
-      margin-top: 1rem;
+      margin-bottom: 30px;
     }
-    .section {
-      display: flex;
-      padding: 4rem 2rem;
-      align-items: center;
-    }
-    .section.left {
-      background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914') center/cover no-repeat;
-      color: #fff;
-    }
-    .section.left .text {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      max-width: 40%;
-    }
-    .projects {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      padding: 2rem;
-      background: #f0f0f0;
-    }
-    .project-card {
-      background: white;
-      color: #333;
-      width: calc(33% - 1rem);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .project-card .content {
-      padding: 1rem;
-    }
-    .btn {
-      background: #007bff;
+    header a {
+      padding: 12px 24px;
+      background: #4CAF50;
       color: white;
-      padding: 0.7rem 1.2rem;
-      border: none;
-      border-radius: 5px;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
+      border-radius: 5px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .services, .reviews {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 45%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea, button {
+      padding: 10px;
+      font-size: 1rem;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
     @media (max-width: 768px) {
-      .section {
-        flex-direction: column;
-      }
-      .section.left .text {
-        max-width: 100%;
-      }
-      .project-card {
-        width: 100%;
-      }
+      .card { width: 100%; }
+      header h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Капля отдыха</h1>
+    <p>Отдохни на природе — почувствуй свободу и уют</p>
+    <a href="#contact">Забронировать</a>
+  </header>
 
-<header>
-  <h1>Каркасные дома под ключ</h1>
-  <p>Строим быстро, качественно и с гарантией</p>
-</header>
+  <section>
+    <h2>О нас</h2>
+    <p>Небольшой уютный кемпинг, окружённый природой. Всё, что нужно для отдыха душой и телом. Идеальное место для семьи, пары или компании друзей.</p>
+  </section>
 
-<section class="section left">
-  <div class="text">
-    <h2>Завершённые проекты</h2>
-    <p>Мы с гордостью представляем вам наш многолетний труд, выраженный в виде готовых домов.</p>
-    <a href="#" class="btn">Все работы</a>
-  </div>
-</section>
-
-<section class="projects">
-  <div class="project-card">
-    <img src="https://images.unsplash.com/photo-1572120360610-d971b9b78847" alt="Дом на Кипре">
-    <div class="content">
-      <h3>Жилой комплекс на Кипре</h3>
-      <a href="#" class="btn">Подробнее</a>
+  <section class="services">
+    <div class="card">
+      <h3>Палатки и домики</h3>
+      <p>Комфортные условия для ночёвки.</p>
     </div>
-  </div>
-  <div class="project-card">
-    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Загородный дом">
-    <div class="content">
-      <h3>Загородный дом для отдыха</h3>
-      <a href="#" class="btn">Подробнее</a>
+    <div class="card">
+      <h3>Мангалы и кострища</h3>
+      <p>Жарьте шашлык и отдыхайте у костра.</p>
     </div>
-  </div>
-</section>
+    <div class="card">
+      <h3>Водоём рядом</h3>
+      <p>Купание, рыбалка, прогулки у воды.</p>
+    </div>
+    <div class="card">
+      <h3>Душ и туалет</h3>
+      <p>Все удобства на месте.</p>
+    </div>
+  </section>
 
+  <section class="reviews">
+    <h2>Отзывы</h2>
+    <div class="card">
+      <p>“Прекрасное место для отдыха! Всё чисто, спокойно и красиво.”</p>
+      <p><strong>— Анна</strong></p>
+    </div>
+    <div class="card">
+      <p>“Отдыхали семьёй — дети в восторге, взрослые тоже.”</p>
+      <p><strong>— Игорь</strong></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Бронирование</h2>
+    <form>
+      <input type="text" placeholder="Имя" required>
+      <input type="tel" placeholder="Телефон" required>
+      <input type="date" required>
+      <textarea placeholder="Комментарий (необязательно)"></textarea>
+      <button type="submit">Оставить заявку</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Контакты: +7 999 123-45-67 | avramenkov_mafik@mail.ru</p>
+    <p>&copy; 2025 Капля отдыха</p>
+  </footer>
 </body>
 </html>
