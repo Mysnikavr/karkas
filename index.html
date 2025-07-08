@@ -1,90 +1,59 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Капля Отдыха</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Section</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: sans-serif; color: #fff; }
-    header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: rgba(0, 0, 0, 0.3);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    header h1 {
-      font-size: 24px;
+    body, html {
+      font-family: Arial, sans-serif;
+      height: 100%;
     }
     .hero {
-      background: url('hero-image.jpg') center/cover no-repeat;
+      width: 100%;
       height: 100vh;
+      background: url('background.jpg') center/cover no-repeat;
       display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      align-items: center;
+      color: white;
       text-align: center;
-      position: relative;
+      padding: 0 20px;
     }
-    .hero h2 {
-      font-size: 48px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px 40px;
-      border-radius: 10px;
+    .hero h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
     }
-    .section {
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      padding: 100px 40px;
-    }
-    .section .text-left {
-      max-width: 500px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 8px;
-    }
-    .telegram {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .hero p {
       font-size: 20px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 300px;
+      margin-bottom: 40px;
+      max-width: 600px;
     }
-    .telegram img {
-      width: 30px;
-      height: 30px;
+    .hero a.button {
+      background-color: #00A859;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .hero a.button:hover {
+      background-color: #007f45;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Капля Отдыха</h1>
-    <img src="logo.png" alt="Логотип" height="40" />
-  </header>
-
   <section class="hero">
-    <h2>Капля Отдыха</h2>
-  </section>
-
-  <section class="section" style="background-image: url('camp1.jpg');">
-    <div class="text-left">
-      <h3>Уютные кемперы в окружении природы</h3>
-      <p>Ощути свободу, отдыхай в капле уюта. Тихо, спокойно, экологично.</p>
-    </div>
-  </section>
-
-  <section class="section" style="background-image: url('camp2.jpg');">
-    <div class="telegram">
-      <img src="telegram-icon.png" alt="Telegram" />
-      <span><a href="https://t.me/yourchannel" target="_blank" style="color: white; text-decoration: none;">Связаться в Telegram</a></span>
-    </div>
+    <h1>Добро пожаловать в Fistashka Trailer</h1>
+    <p>Отдыхай с комфортом в наших стильных кемперах посреди природы Беларуси</p>
+    <a href="#contact" class="button">Забронировать</a>
   </section>
 </body>
 </html>
